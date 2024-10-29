@@ -10,7 +10,7 @@ WORKDIR /opt/app-root/src
 
 COPY --chown=1001:0 App/DotNet.Docker.csproj /opt/app-root/src
 RUN dotnet restore "DotNet.Docker.csproj"
-COPY --chown=1001:0 . /opt/app-root/src
+COPY --chown=1001:0 App/Program.cs /opt/app-root/src
 WORKDIR /opt/app-root/src
 RUN dotnet build "DotNet.Docker.csproj" -c Release -o /opt/app-root/app/build
 
